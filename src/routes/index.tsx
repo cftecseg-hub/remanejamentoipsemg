@@ -411,18 +411,6 @@ function Index() {
                     ))}
                   </select>
                 </Campo>
-                <Campo label="Código SIAD (unidade origem) (opcional)">
-                  <Input
-                    value={l.siadOrigem}
-                    onChange={(v) => atualizar(idx, "siadOrigem", v)}
-                  />
-                </Campo>
-                <Campo label="Código SIAD (unidade destino) (opcional)">
-                  <Input
-                    value={l.siadDestino}
-                    onChange={(v) => atualizar(idx, "siadDestino", v)}
-                  />
-                </Campo>
               </div>
             </div>
           ))}
