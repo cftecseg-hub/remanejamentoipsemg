@@ -149,10 +149,20 @@ function Index() {
         };
       });
 
-      ws.mergeCells("A4:J4");
-      ws.getCell("A4").value = predio || "PRÉDIO MINAS -  º ANDAR";
+      ws.getCell("A4").value = "PRÉDIO / ANDAR";
       ws.getCell("A4").font = { bold: true };
       ws.getCell("A4").alignment = { horizontal: "center", vertical: "middle" };
+      ws.mergeCells("B4:J4");
+      ws.getCell("B4").value = predio || "PRÉDIO MINAS -  º ANDAR";
+      ws.getCell("B4").alignment = { horizontal: "center", vertical: "middle" };
+      ["A4", "B4"].forEach((addr) => {
+        ws.getCell(addr).fill = {
+          type: "pattern",
+          pattern: "solid",
+          fgColor: { argb: "FFA9D08E" },
+        };
+      });
+
 
       // Cabeçalhos das colunas
       const headers = [
