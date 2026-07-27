@@ -439,8 +439,8 @@ function Index() {
         </div>
 
         <footer className="mt-10 border-t pt-4 text-center text-xs text-muted-foreground">
-          <p>Assessoria de Tecnologia e Informação - Núcleo de Infraestrutura e Suporte de TIC</p>
-          <p className="mt-1">Desenvolvido por: Wesley Fernandes</p>
+          <p>Desenvolvido por: Wesley Fernandes</p>
+
         </footer>
       </div>
 
