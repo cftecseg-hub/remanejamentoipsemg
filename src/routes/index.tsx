@@ -57,8 +57,6 @@ type Dispositivo = {
   estacaoDestino: string;
   pontoRedeDestino: string;
   condicaoDestino: string;
-  siadOrigem: string;
-  siadDestino: string;
 };
 
 const linhaVazia = (): Dispositivo => ({
@@ -72,8 +70,6 @@ const linhaVazia = (): Dispositivo => ({
   estacaoDestino: "",
   pontoRedeDestino: "",
   condicaoDestino: "",
-  siadOrigem: "",
-  siadDestino: "",
 });
 
 function Index() {
@@ -126,7 +122,7 @@ function Index() {
       const ws = wb.addWorksheet("Remanejamento");
 
       // Título
-      ws.mergeCells("A1:L1");
+      ws.mergeCells("A1:J1");
       const titulo = ws.getCell("A1");
       titulo.value = "Remanejamento Cidade Administrativa";
       titulo.font = { bold: true, size: 14 };
@@ -142,7 +138,7 @@ function Index() {
       ws.getCell("A3").value = "ÓRGAO / ENTIDADE";
       ws.getCell("A3").font = { bold: true };
       ws.getCell("A3").alignment = { horizontal: "center", vertical: "middle" };
-      ws.mergeCells("B3:L3");
+      ws.mergeCells("B3:J3");
       ws.getCell("B3").value = orgao;
       ws.getCell("B3").alignment = { horizontal: "center", vertical: "middle" };
       ["A3", "B3"].forEach((addr) => {
@@ -153,7 +149,7 @@ function Index() {
         };
       });
 
-      ws.mergeCells("A4:L4");
+      ws.mergeCells("A4:J4");
       ws.getCell("A4").value = predio || "PRÉDIO MINAS -  º ANDAR";
       ws.getCell("A4").font = { bold: true };
       ws.getCell("A4").alignment = { horizontal: "center", vertical: "middle" };
@@ -170,8 +166,6 @@ function Index() {
         "NÚMERO DA ESTAÇÃO DE DESTINO",
         "N° PONTO REDE ESTAÇÃO DESTINO",
         "CONDIÇÃO DA ESTAÇÃO DE DESTINO",
-        "CODIGO (SIAD) UNIDADE DE ORIGEM",
-        "CODIGO (SIAD) UNIDADE DE DESTINO",
       ];
       const headerRow = ws.getRow(5);
       headers.forEach((h, i) => {
@@ -207,8 +201,6 @@ function Index() {
           d.estacaoDestino,
           d.pontoRedeDestino,
           d.condicaoDestino,
-          d.siadOrigem,
-          d.siadDestino,
         ];
         vals.forEach((v, j) => {
           const c = row.getCell(j + 1);
@@ -224,7 +216,7 @@ function Index() {
       });
 
       // Larguras
-      const widths = [22, 10, 14, 16, 18, 18, 20, 18, 18, 20, 20, 20];
+      const widths = [22, 10, 14, 16, 18, 18, 20, 18, 18, 20];
       widths.forEach((w, i) => {
         ws.getColumn(i + 1).width = w;
       });
