@@ -43,12 +43,8 @@ const CONDICAO_DESTINO = [
 
 const ORIGEM_VAZIA = ["VAZIA", "TROCA VICE-VERSA", "TROCA ALTERNADA"];
 
-const PREDIO_ANDAR = [
-  "PREDIO MINAS - 13º ANDAR",
-  "PREDIO MINAS - 12º ANDAR",
-  "PREDIO MINAS - 10º ANDAR",
-  "PREDIO MINAS - 8º ANDAR",
-];
+const PREDIO_ANDAR = ["PREDIO GERAIS - 4º ANDAR"];
+
 
 type Dispositivo = {
   tipoDispositivo: string;
